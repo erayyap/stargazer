@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fd9c4eb71dcb24a81587d4ef6ca573, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  spawns:
+  - opCode: 0
+    time: 0
+    vars:
+    - ident: id
+      val: 0
+    - ident: level
+      val: 1
+    - ident: posx
+      val: 0
+    - ident: posy
+      val: 7
+  - opCode: 0
+    time: 300
+    vars:
+    - ident: id
+      val: 0
+    - ident: level
+      val: 1
+    - ident: posx
+      val: -3
+    - ident: posy
+      val: 7
+  - opCode: 0
+    time: 600
+    vars:
+    - ident: id
+      val: 0
+    - ident: level
+      val: 1
+    - ident: posx
+      val: 3
+    - ident: posy
+      val: 7
+  - opCode: 0
+    time: 900
+    vars:
+    - ident: id
+      val: 1
+    - ident: level
+      val: 5
+    - ident: posx
+      val: 2
+    - ident: posy
+      val: 7
+  - opCode: 0
+    time: 900
+    vars:
+    - ident: id
+      val: 1
+    - ident: level
+      val: 3
+    - ident: posx
+      val: 0
+    - ident: posy
+      val: 7
+  - opCode: 0
+    time: 900
+    vars:
+    - ident: id
+      val: 1
+    - ident: level
+      val: 5
+    - ident: posx
+      val: -2
+    - ident: posy
+      val: 7
+  - opCode: 1
+    time: 900
+    vars:
+    - ident: id
+      val: 2
+    - ident: level
+      val: 2
+    - ident: posx
+      val: 0
+    - ident: posy
+      val: 7
+    - ident: frequency
+      val: 300
+    - ident: trigger_id
+      val: 1
+  - opCode: 3
+    time: 900
+    vars:
+    - ident: id
+      val: 1
