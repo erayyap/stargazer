@@ -63,8 +63,11 @@ GameObject:
   - component: {fileID: 8258812232652646188}
   - component: {fileID: 1339158952853487735}
   - component: {fileID: -5204374845762226837}
-  - component: {fileID: 2828715263145249455}
   - component: {fileID: 1348314082922809373}
+  - component: {fileID: 305862122827029087}
+  - component: {fileID: -6813243441698837554}
+  - component: {fileID: 6522229091745529750}
+  - component: {fileID: 1760678632289229665}
   m_Layer: 0
   m_Name: EnemyBlaster
   m_TagString: Untagged
@@ -179,21 +182,6 @@ MonoBehaviour:
   armor: 0
   healthBar: {fileID: 3563283764789093010}
   XP: 1
---- !u!114 &2828715263145249455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381703712902897466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf42e2efe0df1d4c819318d2283427a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  enemyDestructible: {fileID: -5204374845762226837}
-  guns: []
 --- !u!114 &1348314082922809373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +196,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   stopPointY: 2
+--- !u!114 &305862122827029087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e154caed76657474cbfa2b89a33c9f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  enemyDestructible: {fileID: -5204374845762226837}
+  guns: []
+  healthScaling: {fileID: -6813243441698837554}
+  armorScaling: {fileID: 6522229091745529750}
+  xpScaling: {fileID: 1760678632289229665}
+--- !u!114 &-6813243441698837554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 5
+  valueIncrement: 15
+--- !u!114 &6522229091745529750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 0
+  valueIncrement: 0.2
+--- !u!114 &1760678632289229665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1
+  valueIncrement: 3
 --- !u!1 &4299977835910334663
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +357,9 @@ MonoBehaviour:
   level: 1
   enemyDestructible: {fileID: 4334034671769788687}
   guns: []
+  healthScaling: {fileID: 0}
+  armorScaling: {fileID: 0}
+  xpScaling: {fileID: 0}
 --- !u!114 &4334034671769788687
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 1339158952853487735}
   - component: {fileID: -5204374845762226837}
   - component: {fileID: 6740285061287368643}
+  - component: {fileID: 6014931837642590373}
+  - component: {fileID: 6499442997583184674}
+  - component: {fileID: 6923663109817207845}
   m_Layer: 0
   m_Name: EnemyCruiser
   m_TagString: Untagged
@@ -170,6 +173,51 @@ MonoBehaviour:
   level: 1
   enemyDestructible: {fileID: -5204374845762226837}
   guns: []
+  healthScaling: {fileID: 6014931837642590373}
+  armorScaling: {fileID: 6499442997583184674}
+  xpScaling: {fileID: 6923663109817207845}
+--- !u!114 &6014931837642590373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 0
+  valueIncrement: 10
+--- !u!114 &6499442997583184674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 0
+  valueIncrement: 0.1
+--- !u!114 &6923663109817207845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 0
+  valueIncrement: 1
 --- !u!1 &4299977835910334663
 GameObject:
   m_ObjectHideFlags: 0

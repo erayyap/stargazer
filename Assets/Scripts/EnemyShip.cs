@@ -7,6 +7,9 @@ public class EnemyShip : MonoBehaviour
     public int level = 1;
     public EnemyDestructible enemyDestructible;
     public Shooter[] guns;
+    public LevelScaling healthScaling;
+    public LevelScaling armorScaling;
+    public LevelScaling xpScaling;
 
     void Start()
     {
@@ -15,10 +18,11 @@ public class EnemyShip : MonoBehaviour
 
     public virtual void CalculateProperties()
     {
-        enemyDestructible.maxHP = 10 + level;
+        enemyDestructible.maxHP = healthScaling.CalculateProperty(level);
         enemyDestructible.HP = enemyDestructible.maxHP;
-        enemyDestructible.armor = (float)level * 0.1f;
-        enemyDestructible.XP = level;
+        enemyDestructible.armor = armorScaling.CalculateProperty(level);
+        enemyDestructible.XP = (int) xpScaling.CalculateProperty(level);
+        CalculateGunProperties();
     }
 
     public virtual void CalculateGunProperties()

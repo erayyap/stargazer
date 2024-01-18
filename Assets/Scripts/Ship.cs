@@ -13,22 +13,36 @@ public class Ship : MonoBehaviour
     bool moveLeft;
     bool moveRight;
     bool shoot;
+    public bool mouseControls = true;
     public float moveSpeed = 3.0f;
     public Destructible destructible;
+    public Ship instance;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("More than one Ship in scene!");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
         shooters = transform.GetComponentsInChildren<Shooter>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
-        moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
-        moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
-        moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+        if (!mouseControls)
+        {
+            moveUp = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
+            moveDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
+            moveLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
+            moveRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+        }
         if(Input.GetMouseButton(0))
         {
             foreach(var shooter in shooters)
@@ -49,34 +63,40 @@ public class Ship : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 pos = transform.position;
+        if (!mouseControls) {
+            float moveAmount = moveSpeed * Time.fixedDeltaTime;
+            Vector2 move = Vector2.zero;
 
-        float moveAmount = moveSpeed * Time.fixedDeltaTime;
-        Vector2 move = Vector2.zero;
+            if (moveUp)
+            {
+                move.y++;
+            }
 
-        if(moveUp)
-        {
-            move.y++;
+            if (moveDown)
+            {
+                move.y--;
+            }
+
+            if (moveRight)
+            {
+                move.x++;
+            }
+
+            if (moveLeft)
+            {
+                move.x--;
+            }
+
+            move.Normalize();
+
+            pos += move * moveAmount;
+        } else {
+            pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         }
-
-        if (moveDown)
-        {
-            move.y--;
-        }
-
-        if (moveRight)
-        {
-            move.x++;
-        }
-
-        if (moveLeft)
-        {
-            move.x--;
-        }
-
-        move.Normalize();
-
-        pos += move * moveAmount;
-
+        var cameraPos = Camera.main.transform.position;
+        cameraPos.x = Mathf.Clamp(pos.x/2, -2, 2);
+        Camera.main.transform.position = cameraPos;
         transform.position = pos;
     }
 
