@@ -16,7 +16,7 @@ public class Ship : MonoBehaviour
     public bool mouseControls = true;
     public float moveSpeed = 3.0f;
     public Destructible destructible;
-    public Ship instance;
+    public static Ship instance;
 
     private void Awake()
     {

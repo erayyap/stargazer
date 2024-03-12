@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 914409030020966359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: -0.004, y: -0.53, z: 0.0032495167}
+  m_LocalPosition: {x: -1.188, y: -0.545, z: 0.0032495167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1664000effc6c478625a04fccaa51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6542517005264870591, guid: 476104007b286fb49b07628da9e22e6c, type: 3}
+  bullet: {fileID: 6542517005264870591, guid: 59ae6a481c54a4d43b60633e81347ac2, type: 3}
   direction: {x: 0, y: 0}
   initShooterTimer: 45
   shooterTimer: 0
@@ -62,14 +62,15 @@ GameObject:
   - component: {fileID: 5390313745956137460}
   - component: {fileID: 8258812232652646188}
   - component: {fileID: 1339158952853487735}
+  - component: {fileID: 1865065293729213914}
   - component: {fileID: -5204374845762226837}
-  - component: {fileID: 9190878237863317227}
   - component: {fileID: 1348314082922809373}
   - component: {fileID: -6887926806988868879}
   - component: {fileID: 381129112644274602}
   - component: {fileID: 8486206591209233921}
+  - component: {fileID: 2620085459711999761}
   m_Layer: 0
-  m_Name: EnemyFollowerBlaster
+  m_Name: EnemyDuoBlaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,6 +92,7 @@ Transform:
   - {fileID: 8375811817868009616}
   - {fileID: 1143269824865070134}
   - {fileID: 3419274534446371126}
+  - {fileID: 8050919286851822078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8258812232652646188
@@ -152,7 +154,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006062627, y: -0.06654167}
+  m_Offset: {x: -0.0010881424, y: 0.047871172}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -163,8 +165,43 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4060531, y: 0.82274365}
+  m_Size: {x: 2.848649, y: 0.9520799}
   m_EdgeRadius: 0
+--- !u!58 &1865065293729213914
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.024872243, y: 0.05471921}
+  serializedVersion: 2
+  m_Radius: 0.92780435
 --- !u!114 &-5204374845762226837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,24 +219,6 @@ MonoBehaviour:
   armor: 0
   healthBar: {fileID: 3563283764789093010}
   XP: 1
---- !u!114 &9190878237863317227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381703712902897466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e154caed76657474cbfa2b89a33c9f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  enemyDestructible: {fileID: -5204374845762226837}
-  guns: []
-  healthScaling: {fileID: -6887926806988868879}
-  armorScaling: {fileID: 381129112644274602}
-  xpScaling: {fileID: 8486206591209233921}
 --- !u!114 &1348314082922809373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 10
-  valueIncrement: 10
+  baseValue: 50
+  valueIncrement: 50
 --- !u!114 &381129112644274602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseValue: 0
-  valueIncrement: 0.25
+  valueIncrement: 0.2
 --- !u!114 &8486206591209233921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,8 +273,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695a4eab49645f04db1c1597671e7de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 2
-  valueIncrement: 4
+  baseValue: 8
+  valueIncrement: 6
+--- !u!114 &2620085459711999761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381703712902897466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e154caed76657474cbfa2b89a33c9f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  enemyDestructible: {fileID: -5204374845762226837}
+  guns: []
+  healthScaling: {fileID: -6887926806988868879}
+  armorScaling: {fileID: 381129112644274602}
+  xpScaling: {fileID: 8486206591209233921}
+--- !u!1 &2541604584059682954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8050919286851822078}
+  - component: {fileID: 2256768172411736130}
+  m_Layer: 0
+  m_Name: Gun (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8050919286851822078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541604584059682954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 1.268, y: -0.574, z: 0.0032495167}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5390313745956137460}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+--- !u!114 &2256768172411736130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541604584059682954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1664000effc6c478625a04fccaa51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6542517005264870591, guid: 59ae6a481c54a4d43b60633e81347ac2, type: 3}
+  direction: {x: 0, y: 0}
+  initShooterTimer: 45
+  shooterTimer: 0
+  damage: 1
+  isEnemy: 1
+  isActive: 1
 --- !u!1 &4299977835910334663
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,8 +354,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1143269824865070134}
   - component: {fileID: 7983353709669291976}
-  - component: {fileID: 7728412468446049797}
-  - component: {fileID: 4334034671769788687}
   m_Layer: 0
   m_Name: EnemyCruiser
   m_TagString: Untagged
@@ -331,8 +417,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db4cf2949894fb8428058d78ec48595d, type: 3}
-  m_Color: {r: 0.9150943, g: 0.07720694, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7d761b014923d59439619182985415f9, type: 3}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -342,41 +428,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7728412468446049797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299977835910334663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf42e2efe0df1d4c819318d2283427a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  enemyDestructible: {fileID: 4334034671769788687}
-  guns: []
-  healthScaling: {fileID: 0}
-  armorScaling: {fileID: 0}
-  xpScaling: {fileID: 0}
---- !u!114 &4334034671769788687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4299977835910334663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e80e94121e55244bb749d7f7fe7e405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 40
-  maxHP: 40
-  armor: 0
-  healthBar: {fileID: 3563283764789093010}
-  XP: 0
 --- !u!1001 &8745836629662699763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,12 +437,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 5390313745956137460}
     m_Modifications:
     - target: {fileID: 964799924500672611, guid: ff49b484fd2c5a14198ff3b15bea5bcc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 964799924500672611, guid: ff49b484fd2c5a14198ff3b15bea5bcc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 964799924500672611, guid: ff49b484fd2c5a14198ff3b15bea5bcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 964799924500672611, guid: ff49b484fd2c5a14198ff3b15bea5bcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 964799924500672611, guid: ff49b484fd2c5a14198ff3b15bea5bcc, type: 3}
       propertyPath: m_LocalPosition.z
