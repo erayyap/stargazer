@@ -11,9 +11,14 @@ public class EnemyShip : MonoBehaviour
     public LevelScaling armorScaling;
     public LevelScaling xpScaling;
 
-    void Start()
+    void Awake()
     {
         guns = transform.GetComponentsInChildren<Shooter>();
+    }
+
+    void Start()
+    {
+        
     }
 
     public virtual void CalculateProperties()
@@ -29,6 +34,7 @@ public class EnemyShip : MonoBehaviour
     {
         foreach(var gun in guns)
         {
+            Debug.Log("here");
             gun.CalculateProperties(level);
         }
     }

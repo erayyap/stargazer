@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public int XP = 0;
     public int neededXP;
     public Ship player;
+    public Image XPFill;
+    public TMP_Text levelText;
+    public TMP_Text xpText;
 
     public static LevelManager instance;
 
@@ -32,12 +38,17 @@ public class LevelManager : MonoBehaviour
     public void AddXP(int amount)
     {
         XP += amount;
-        if (XP >= neededXP)
+        while (XP >= neededXP)
         {
             level++;
+            XP -= neededXP;
             CalculateLevelXP();
             player.CalculateProperties(level);
+            levelText.text = $"Level {level}";
         }
+        XPFill.fillAmount = ((float)XP / (float)neededXP);
+        xpText.text = $"{XP} / {neededXP}";
+
     }
 
     public void SetLevel(int lvl)

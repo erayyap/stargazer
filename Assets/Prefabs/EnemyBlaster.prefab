@@ -180,7 +180,9 @@ MonoBehaviour:
   HP: 5
   maxHP: 5
   armor: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 3563283764789093010}
+  healthText: {fileID: 0}
   XP: 1
 --- !u!114 &1348314082922809373
 MonoBehaviour:
@@ -375,7 +377,9 @@ MonoBehaviour:
   HP: 20
   maxHP: 20
   armor: 0
+  explosion: {fileID: 0}
   healthBar: {fileID: 3563283764789093010}
+  healthText: {fileID: 0}
   XP: 0
 --- !u!1001 &8745836629662699763
 PrefabInstance:

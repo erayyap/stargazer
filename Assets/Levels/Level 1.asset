@@ -17,9 +17,9 @@ MonoBehaviour:
     time: 0
     vars:
     - ident: id
-      val: 4
+      val: 0
     - ident: level
-      val: 2
+      val: 1
     - ident: posx
       val: 0
     - ident: posy
@@ -52,7 +52,7 @@ MonoBehaviour:
     - ident: id
       val: 1
     - ident: level
-      val: 5
+      val: 3
     - ident: posx
       val: 2
     - ident: posy
@@ -63,7 +63,7 @@ MonoBehaviour:
     - ident: id
       val: 1
     - ident: level
-      val: 3
+      val: 2
     - ident: posx
       val: 0
     - ident: posy
@@ -74,7 +74,7 @@ MonoBehaviour:
     - ident: id
       val: 1
     - ident: level
-      val: 5
+      val: 3
     - ident: posx
       val: -2
     - ident: posy
@@ -85,7 +85,7 @@ MonoBehaviour:
     - ident: id
       val: 2
     - ident: level
-      val: 2
+      val: 1
     - ident: posx
       val: 0
     - ident: posy
@@ -105,7 +105,7 @@ MonoBehaviour:
     - ident: id
       val: 3
     - ident: level
-      val: 4
+      val: 3
     - ident: posx
       val: 1
     - ident: posy
@@ -116,7 +116,7 @@ MonoBehaviour:
     - ident: id
       val: 3
     - ident: level
-      val: 4
+      val: 3
     - ident: posx
       val: -1
     - ident: posy
@@ -127,7 +127,7 @@ MonoBehaviour:
     - ident: id
       val: 4
     - ident: level
-      val: 3
+      val: 4
     - ident: posx
       val: 0
     - ident: posy

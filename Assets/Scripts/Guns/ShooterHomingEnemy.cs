@@ -36,9 +36,4 @@ public class ShooterHomingEnemy : Shooter
             shooterTimer = initShooterTimer;
     }
 
-    public virtual void CalculateProperties(int level)
-    {
-        damage = 1 + (float)level * 0.1f;
-        initShooterTimer = Mathf.Max(30 - level / 2, 5);
-    }
 }

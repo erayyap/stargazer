@@ -1,15 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Destructible : MonoBehaviour
 {
     public float HP = 20;
     public float maxHP = 20;
     public float armor = 0;
+    public GameObject explosion;
     public Transform healthBar;
+    public TMP_Text? healthText;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Start()
+    {
+        if (healthText != null)
+        {
+            healthText.text = $"{HP:F2} / {maxHP}";
+        }
+    }
+
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         Bullet bullet = collision.GetComponent<Bullet>();
        
@@ -18,7 +29,7 @@ public class Destructible : MonoBehaviour
         {
             if (bullet.damage > armor)
             {
-                DamageHealth(bullet.damage);
+                DamageHealth(bullet.damage - armor);
             }
             Destroy(bullet.gameObject);
             if (HP <= 0)
@@ -53,6 +64,14 @@ public class Destructible : MonoBehaviour
                 pos.x = (scale - 1) / 2;
                 healthBar.localPosition = pos;
             }
+        }
+        if(healthText != null)
+        {
+            healthText.text = $"{HP:F2} / {maxHP}";
+        }
+        if(HP <= 0 && explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
         }
     }
 }

@@ -14,7 +14,7 @@ public class EnemyDestructible : Destructible
         {
             if (bullet.damage > armor)
             {
-                DamageHealth(bullet.damage);
+                DamageHealth(bullet.damage - armor);
             }
             Destroy(bullet.gameObject);
             if (HP <= 0)

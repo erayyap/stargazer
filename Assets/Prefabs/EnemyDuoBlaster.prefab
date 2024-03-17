@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: -6887926806988868879}
   - component: {fileID: 381129112644274602}
   - component: {fileID: 8486206591209233921}
-  - component: {fileID: 2620085459711999761}
+  - component: {fileID: 2893913851789566449}
   m_Layer: 0
   m_Name: EnemyDuoBlaster
   m_TagString: Untagged
@@ -217,7 +217,9 @@ MonoBehaviour:
   HP: 5
   maxHP: 5
   armor: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 3563283764789093010}
+  healthText: {fileID: 0}
   XP: 1
 --- !u!114 &1348314082922809373
 MonoBehaviour:
@@ -275,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseValue: 8
   valueIncrement: 6
---- !u!114 &2620085459711999761
+--- !u!114 &2893913851789566449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,7 +286,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1381703712902897466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e154caed76657474cbfa2b89a33c9f75, type: 3}
+  m_Script: {fileID: 11500000, guid: 74f6a3c6c54c2594f88174df8639656e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
@@ -293,6 +295,12 @@ MonoBehaviour:
   healthScaling: {fileID: -6887926806988868879}
   armorScaling: {fileID: 381129112644274602}
   xpScaling: {fileID: 8486206591209233921}
+  shooterTimer: 30
+  burstPeriod: 5
+  burstTimer: 20
+  firstForm: {fileID: 21300000, guid: 7d761b014923d59439619182985415f9, type: 3}
+  secondForm: {fileID: 21300000, guid: 964a062e00dc3cb44b75c194addb3638, type: 3}
+  spriteRenderer: {fileID: 7983353709669291976}
 --- !u!1 &2541604584059682954
 GameObject:
   m_ObjectHideFlags: 0
